@@ -7,7 +7,9 @@ export default {
 } as ComponentMeta<typeof Highlight>;
 
 const Template: ComponentStory<typeof Highlight> = (args) => (
-  <Highlight {...args} />
+  <div className="w-1/2">
+    <Highlight {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});

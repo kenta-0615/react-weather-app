@@ -8,11 +8,11 @@ type Props = {
 
 export const Highlight: React.FC<Props> = ({ title, value, unit }) => {
   return (
-    <div className="bg-navy">
-      <div className="text-red">{title}</div>
+    <div className="bg-navy text-white text-center py-5">
+      <div className="font-medium ">{title}</div>
       <div>
-        <span>{value}</span>
-        <span>{unit}</span>
+        <span className="text-[64px]">{value}</span>
+        <span className="text-4xl">{unit}</span>
       </div>
     </div>
   );
