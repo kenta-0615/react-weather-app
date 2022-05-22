@@ -14,8 +14,9 @@ const Template: ComponentStory<typeof WeatherCard> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-	dayTitle: "Tomorrow",
+	title: "Tomorrow",
 	iconUrl: "https://www.jma.go.jp/bosai/forecast/img/100.svg",
-	value: 1,
-	unit: "°C",
+	maxTemperature: 30,
+	minTemperature: 1,
+	unit: "C",
 };
