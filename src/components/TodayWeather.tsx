@@ -2,14 +2,14 @@ import React from "react";
 
 type Props = {
 	iconUrl: string;
-	todayTemperature: number;
+	temperature: number;
 	unit: string;
 	todayWeather: string;
 };
 
 export const TodayWeather: React.FC<Props> = ({
 	iconUrl,
-	todayTemperature,
+	temperature,
 	unit,
 	todayWeather,
 }) => {
@@ -20,7 +20,7 @@ export const TodayWeather: React.FC<Props> = ({
 			</div>
 			<div className="flex flex-col items-center pt-6">
 				<h1 className="relative text-[100px] flex-5 py-8 h-56 w-48 m-10">
-					{todayTemperature}
+					{temperature}
 					<span className="text-5xl text-gray-250">&deg;{unit}</span>
 				</h1>
 			</div>

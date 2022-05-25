@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof TodayWeather> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
 	iconUrl: "https://www.jma.go.jp/bosai/forecast/img/212.svg",
-	todayTemperature: 15,
+	temperature: 15,
 	unit: "C",
 	todayWeather: "Shower",
 };
