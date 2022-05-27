@@ -17,5 +17,5 @@ Default.args = {
 	iconUrl: "https://www.jma.go.jp/bosai/forecast/img/212.svg",
 	temperature: 15,
 	unit: "C",
-	todayWeather: "Shower",
+	telopWeather: "Shower",
 };
