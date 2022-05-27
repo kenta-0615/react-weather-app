@@ -4,14 +4,14 @@ type Props = {
 	iconUrl: string;
 	temperature: number;
 	unit: string;
-	telopWeather: string;
+	telop: string;
 };
 
 export const TodayWeather: React.FC<Props> = ({
 	iconUrl,
 	temperature,
 	unit,
-	telopWeather,
+	telop,
 }) => {
 	return (
 		<div className="h-screen bg-navy text-center">
@@ -25,7 +25,7 @@ export const TodayWeather: React.FC<Props> = ({
 				</h1>
 			</div>
 			<div className="h-52">
-				<h3 className="font-semibold text-4xl text-gray-250">{telopWeather}</h3>
+				<h3 className="font-semibold text-4xl text-gray-250">{telop}</h3>
 			</div>
 			<div className="flex flex-col items-center text-center text-gray-350 text-lg space-y-5">
 				<p>Today &bull; Fri 5 Jun</p>
