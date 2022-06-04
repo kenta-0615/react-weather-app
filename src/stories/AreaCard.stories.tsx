@@ -6,6 +6,11 @@ export default {
 	component: AreaCard,
 } as ComponentMeta<typeof AreaCard>;
 
-export const Template: ComponentStory<typeof AreaCard> = (args) => (
+const Template: ComponentStory<typeof AreaCard> = (args) => (
 	<AreaCard {...args} />
 );
+
+export const Default = Template.bind({});
+Default.args = {
+	name: "東京",
+};
