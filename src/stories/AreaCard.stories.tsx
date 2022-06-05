@@ -13,4 +13,7 @@ const Template: ComponentStory<typeof AreaCard> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
 	name: "東京",
+	onClick: () => {
+		console.log("test");
+	},
 };
