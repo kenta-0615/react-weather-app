@@ -2,16 +2,16 @@ import React from "react";
 
 type Props = {
 	iconUrl: string;
-	todayTemperature: number;
+	temperature: number;
 	unit: string;
-	todayWeather: string;
+	telop: string;
 };
 
 export const TodayWeather: React.FC<Props> = ({
 	iconUrl,
-	todayTemperature,
+	temperature,
 	unit,
-	todayWeather,
+	telop,
 }) => {
 	return (
 		<div className="h-screen bg-navy text-center">
@@ -20,12 +20,12 @@ export const TodayWeather: React.FC<Props> = ({
 			</div>
 			<div className="flex flex-col items-center pt-6">
 				<h1 className="relative text-[100px] flex-5 py-8 h-56 w-48 m-10">
-					{todayTemperature}
+					{temperature}
 					<span className="text-5xl text-gray-250">&deg;{unit}</span>
 				</h1>
 			</div>
 			<div className="h-52">
-				<h3 className="font-semibold text-4xl text-gray-250">{todayWeather}</h3>
+				<h3 className="font-semibold text-4xl text-gray-250">{telop}</h3>
 			</div>
 			<div className="flex flex-col items-center text-center text-gray-350 text-lg space-y-5">
 				<p>Today &bull; Fri 5 Jun</p>
