@@ -14,20 +14,30 @@ module.exports = {
     builder: "@storybook/builder-webpack5",
   },
   webpackFinal: (config) => {
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        {
-          loader: "postcss-loader",
-          options: {
-            postcssOptions: {
-              plugins: [require("tailwindcss"), require("autoprefixer")],
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      src: path.resolve(__dirname, "../src"),
+    };
+    config.module.rules.push(
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
             },
           },
-        },
-      ],
-      include: path.resolve(__dirname, "../"),
-    });
+        ],
+        include: path.resolve(__dirname, "../"),
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      }
+    );
     return config;
   },
 };
