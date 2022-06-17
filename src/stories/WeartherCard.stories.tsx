@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { WeatherCard } from "../components/WeatherCard";
+import { WeatherCard } from "../components/common/WeatherCard";
 
 export default {
 	title: "WeatherCard",

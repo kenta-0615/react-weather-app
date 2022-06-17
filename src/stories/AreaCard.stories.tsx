@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { AreaCard } from "../components/AreaCard";
+import { AreaCard } from "../components/common/AreaCard";
 
 export default {
 	title: "Area Card",

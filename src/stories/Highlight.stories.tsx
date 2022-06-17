@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Highlight } from "../components/Highlight";
+import { Highlight } from "../components/common/Highlight";
 
 export default {
 	title: "Highlight",
