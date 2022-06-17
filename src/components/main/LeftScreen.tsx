@@ -6,9 +6,6 @@ import { SideBar } from "./SideBar";
 export const LeftScreen: React.FC = () => {
 	return (
 		<div className="relative">
-			<div>
-				<SideBar />
-			</div>
 			<div className="absolute m-10">
 				<Button
 					title={"Search for places"}
@@ -21,6 +18,7 @@ export const LeftScreen: React.FC = () => {
 				unit={"C"}
 				telop={"Shower"}
 			/>
+			<SideBar />
 		</div>
 	);
 };
