@@ -5,25 +5,28 @@ import { AreaCard } from "src/components/common/AreaCard";
 import { useState } from "react";
 
 export const SideBar: React.FC = () => {
-	const [shownSidebar, setShownSidebar] = useState(false);
+	const [isShownSidebar, setIsShownSidebar] = useState(false);
 
 	return (
 		<div className="relative ">
-			{shownSidebar ? (
+			{isShownSidebar ? (
 				<div className="flex text-gley fixed left-10 top-6 z-50">
-					<button onClick={() => setShownSidebar(!shownSidebar)}>X</button>
+					<Button
+						title={"X"}
+						onClick={() => setIsShownSidebar(!isShownSidebar)}
+					/>
 				</div>
 			) : (
 				<div className="fixed flex cursor-pointer left-20 top-6">
 					<Button
 						title={"Search for places"}
-						onClick={() => setShownSidebar(!shownSidebar)}
+						onClick={() => setIsShownSidebar(!isShownSidebar)}
 					/>
 				</div>
 			)}
 			<div
 				className={`fixed top-0 bg-[#F6F9FE] w-1/3 h-full left-0 ${
-					shownSidebar ? "translate-y-6" : "translate-y-full"
+					isShownSidebar ? "translate-y-6" : "translate-y-full"
 				}`}
 			>
 				<div className="flex m-4">
