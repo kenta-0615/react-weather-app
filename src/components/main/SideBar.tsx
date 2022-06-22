@@ -8,8 +8,8 @@ type Props = {
 
 export const SideBar: React.FC<Props> = ({ onClose }) => {
 	return (
-		<div>
-			<div className=" pt-1 pl-36 h-5 w-0.5">
+		<div className="relative">
+			<div className="absolute top-0 right-0">
 				<Button title={"X"} onClick={onClose} />
 			</div>
 			<div className="flex p-5">
