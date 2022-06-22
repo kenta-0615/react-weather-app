@@ -5,27 +5,29 @@ import { useState } from "react";
 import { SideBar } from "./SideBar";
 
 export const LeftScreen: React.FC = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isClose, setIsClose] = useState(false);
+
+	const toggle = () => setIsClose(!isClose);
 
 	return (
 		<div className="relative">
-			<div className="absolute m-10">
-				<Button
-					title={"Search for places"}
-					onClick={() => setIsOpen(!isOpen)}
-				/>
-				{isOpen && (
-					<div>
-						<SideBar />
+			{isClose ? (
+				<div className="absolute w-1/3 h-hull">
+					<SideBar onClose={toggle} />
+				</div>
+			) : (
+				<>
+					<div className="absolute m-10">
+						<Button title={"Search for places"} onClick={toggle} />
 					</div>
-				)}
-			</div>
-			<TodayWeather
-				iconUrl={"https://www.jma.go.jp/bosai/forecast/img/212.svg"}
-				temperature={15}
-				unit={"C"}
-				telop={"Shower"}
-			/>
+					<TodayWeather
+						iconUrl={"https://www.jma.go.jp/bosai/forecast/img/212.svg"}
+						temperature={15}
+						unit={"C"}
+						telop={"Shower"}
+					/>
+				</>
+			)}
 		</div>
 	);
 };
