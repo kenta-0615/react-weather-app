@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Dummy } from "./pages/dummy";
+import { Main } from "./pages/Main";
 import axios from "axios";
 
 const App: React.FC = () => {
@@ -13,7 +13,7 @@ const App: React.FC = () => {
 	console.log(getWeather());
 	return (
 		<div>
-			<Dummy />
+			<Main />
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Option } from "../components/Option";
+import { Option } from "../components/common/Option";
 
 export default {
 	title: "Option",

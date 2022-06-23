@@ -16,12 +16,14 @@ export const WeatherCard: React.FC<Props> = ({
 	unit,
 }) => {
 	return (
-		<div className="bg-navy text-white w-50">
-			<p>{title}</p>
+		<div className="bg-navy text-white w-auto h-44">
 			<div className="text-center">
+				<p>{title}</p>
+			</div>
+			<div className="text-center mt-7">
 				<img className="m-auto" src={iconUrl} />
 			</div>
-			<div className="flex-row space-x-3">
+			<div className="flex-row space-x-3 text-center mt-4">
 				<span>
 					{maxTemperature}&deg;{unit}
 				</span>

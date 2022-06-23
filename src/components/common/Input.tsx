@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../images/297822.svg";
+import icon from "src/images/297822.svg";
 
 export const Input: React.FC = () => {
 	return (
