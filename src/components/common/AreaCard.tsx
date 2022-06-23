@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "src/images/images.png";
+import icon from "src/images/arrow.svg";
 
 type Props = {
 	name: string;
@@ -11,10 +11,10 @@ export const AreaCard: React.FC<Props> = ({ name, onClick }) => {
 		<button
 			type="button"
 			onClick={onClick}
-			className="text-white bg-gray-700 w-96 h-16 px-5 py-2.5 inline-center text-center inline-flex items-center hover:bg-gray-400"
+			className="flex relative text-white bg-gray-500 w-80 h-16 pl-5 pt-5 hover:bg-slate-400"
 		>
 			{name}
-			<img className="w-5 h-5 ml-72" src={icon} />
+			<img className="absolute w-5 h-5 ml-60 mt-0.5" src={icon} alt="icon" />
 		</button>
 	);
 };
