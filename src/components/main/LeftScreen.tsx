@@ -4,7 +4,21 @@ import { Button } from "../common/Button";
 import { useState } from "react";
 import { SideBar } from "./SideBar";
 
-export const LeftScreen: React.FC = () => {
+type Props = {
+	telop: string;
+	image: string;
+	temperature: string;
+	day: string;
+	area: string;
+};
+
+export const LeftScreen: React.FC<Props> = ({
+	telop,
+	image,
+	temperature,
+	day,
+	area,
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -13,17 +27,19 @@ export const LeftScreen: React.FC = () => {
 				<SideBar onClose={() => setIsOpen(false)} />
 			) : (
 				<>
-					<div className="absolute m-10 px-9 py-2 h-hull w-52 bg-[#6E707A]">
+					<div className="absolute m-10 px-9 py-2 w-52 bg-[#6E707A]">
 						<Button
 							title={"Search for places"}
 							onClick={() => setIsOpen(true)}
 						/>
 					</div>
 					<TodayWeather
-						iconUrl={"https://www.jma.go.jp/bosai/forecast/img/212.svg"}
-						temperature={15}
+						iconUrl={image}
+						temperature={temperature}
 						unit={"C"}
-						telop={"Shower"}
+						telop={telop}
+						day={day}
+						area={area}
 					/>
 				</>
 			)}

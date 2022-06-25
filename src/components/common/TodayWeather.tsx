@@ -2,19 +2,23 @@ import React from "react";
 
 type Props = {
 	iconUrl: string;
-	temperature: number;
+	temperature: string;
 	unit: string;
 	telop: string;
+	day: string;
+	area: string;
 };
 
 export const TodayWeather: React.FC<Props> = ({
 	iconUrl,
-	temperature,
 	unit,
+	temperature,
 	telop,
+	day,
+	area,
 }) => {
 	return (
-		<div className="h-hull bg-slate-700 text-center">
+		<div className="h-screen bg-slate-700 text-center">
 			<div className="relative flex flex-nowrap top-32 justify-center top-38 items-center max-h-40">
 				<img className="h-48 p-4 m-8" src={iconUrl} />
 			</div>
@@ -28,9 +32,10 @@ export const TodayWeather: React.FC<Props> = ({
 				<h3 className="font-semibold text-4xl text-slate-50">{telop}</h3>
 			</div>
 			<div className="flex flex-col items-center text-center text-slate-50 text-lg space-y-5">
-				<p>Today &bull; Fri 5 Jun</p>
+				<p>{day}</p>
 				<p>
-					<i className="fas fa-map-marker-alt"></i> Helsinki
+					<i className="fas fa-map-marker-alt"></i>
+					{area}
 				</p>
 			</div>
 		</div>
