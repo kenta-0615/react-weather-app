@@ -5,7 +5,6 @@ import axios from "axios";
 import { WeatherAPI } from "../types";
 import { Weather } from "src/components/common/WeeklyWeather";
 
-//配列の実装
 const initialWeatherData: WeatherAPI = {
   publicTime: "",
   publicTimeFormatted: "",
@@ -82,10 +81,16 @@ export const Main: React.FC = () => {
       };
     });
 
+  const todayWeatherForecast = weatherData.forecasts[0];
+  const todayWeatherHighlights = [
+    { title: "風の強さ", value: todayWeatherForecast.detail.wind },
+    { title: "波の高さ", value: todayWeatherForecast.detail.wave },
+  ];
+
   useEffect(() => {
     const getWeather = async () => {
       const response = await axios.get(
-        "https://weather.tsukumijima.net/api/forecast/city/400040"
+        "https://weather.tsukumijima.net/api/forecast/city/130010"
       );
       setWeatherData(response.data);
     };
@@ -96,15 +101,18 @@ export const Main: React.FC = () => {
     <div className="flex">
       <div className="w-1/3 h-screen">
         <LeftScreen
-          image={weatherData.forecasts[0].image.url}
-          telop={weatherData.forecasts[0].telop}
-          temperature={weatherData.forecasts[0].temperature.max.celsius || ""}
+          image={todayWeatherForecast.image.url}
+          telop={todayWeatherForecast.telop}
+          temperature={todayWeatherForecast.temperature.max.celsius || ""}
           day={weatherData.publicTimeFormatted}
           area={weatherData.location.prefecture}
         />
       </div>
       <div className="w-2/3 h-screen bg-sky-700">
-        <RightScreen weathers={weathersAfterTomorrow} />
+        <RightScreen
+          weeklyWeather={weathersAfterTomorrow}
+          todayWeatherHighlight={todayWeatherHighlights}
+        />
       </div>
     </div>
   );
