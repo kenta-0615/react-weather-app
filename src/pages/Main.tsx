@@ -4,6 +4,7 @@ import { RightScreen } from "../components/main/RightScreen";
 import axios from "axios";
 import { WeatherAPI } from "../types";
 import { Weather } from "src/components/common/WeeklyWeather";
+import { weatherApiBaseUrl } from "src/utils/domain";
 
 const initialWeatherData: WeatherAPI = {
   publicTime: "",
@@ -81,6 +82,11 @@ export const Main: React.FC = () => {
       };
     });
 
+  const getWeather = async (cityId: string) => {
+    const response = await axios.get(weatherApiBaseUrl + "/" + cityId);
+    setWeatherData(response.data);
+  };
+
   const todayWeatherForecast = weatherData.forecasts[0];
   const todayWeatherHighlights = [
     { title: "風の強さ", value: todayWeatherForecast.detail.wind },
@@ -88,13 +94,8 @@ export const Main: React.FC = () => {
   ];
 
   useEffect(() => {
-    const getWeather = async () => {
-      const response = await axios.get(
-        "https://weather.tsukumijima.net/api/forecast/city/130010"
-      );
-      setWeatherData(response.data);
-    };
-    getWeather();
+    // 初期読み込みは東京の天気を検索
+    getWeather("130010");
   }, []);
 
   return (
@@ -106,6 +107,7 @@ export const Main: React.FC = () => {
           temperature={todayWeatherForecast.temperature.max.celsius || ""}
           day={weatherData.publicTimeFormatted}
           area={weatherData.location.prefecture}
+          onSearchWeather={(cityId: string) => getWeather(cityId)}
         />
       </div>
       <div className="w-2/3 h-screen bg-sky-700">
