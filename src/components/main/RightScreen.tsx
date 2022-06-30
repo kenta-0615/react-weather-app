@@ -1,16 +1,29 @@
 import React from "react";
-import { WeeklyWeather } from "../common/WeeklyWeather";
-import { HighlightCohesive } from "../common/HighlightCohesive";
+import { Weather, WeeklyWeather } from "../common/WeeklyWeather";
+import { HighlightList } from "../common/HighlightList";
 
-export const RightScreen: React.FC = () => {
-	return (
-		<div>
-			<div className="inset-y-0  w-full mt-32 mx-48">
-				<WeeklyWeather />
-			</div>
-			<div>
-				<HighlightCohesive />
-			</div>
-		</div>
-	);
+type TodayWeatherHighlight = {
+  title: string;
+  value: string;
+};
+
+type Props = {
+  weeklyWeather: Weather[];
+  todayWeatherHighlight: TodayWeatherHighlight[];
+};
+
+export const RightScreen: React.FC<Props> = ({
+  weeklyWeather,
+  todayWeatherHighlight,
+}) => {
+  return (
+    <div>
+      <div className="flex w-full mt-5 ">
+        <WeeklyWeather weathers={weeklyWeather} />
+      </div>
+      <div>
+        <HighlightList highlights={todayWeatherHighlight} />
+      </div>
+    </div>
+  );
 };

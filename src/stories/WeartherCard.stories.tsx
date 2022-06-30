@@ -16,7 +16,6 @@ export const Default = Template.bind({});
 Default.args = {
 	title: "Tomorrow",
 	iconUrl: "https://www.jma.go.jp/bosai/forecast/img/100.svg",
-	maxTemperature: 30,
-	minTemperature: 1,
-	unit: "C",
+	maxTemperature: "30",
+	minTemperature: "1",
 };

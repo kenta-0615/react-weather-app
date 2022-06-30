@@ -1,54 +1,25 @@
 import React from "react";
 import { WeatherCard } from "./WeatherCard";
 
-export const WeeklyWeather: React.FC = () => {
-	return (
-		<div className="flex space-x-9">
-			<div>
-				<WeatherCard
-					title={"Tomorrow"}
-					iconUrl={"https://www.jma.go.jp/bosai/forecast/img/100.svg"}
-					maxTemperature={30}
-					minTemperature={1}
-					unit={"C"}
-				/>
-			</div>
-			<div>
-				<WeatherCard
-					title={"Tomorrow"}
-					iconUrl={"https://www.jma.go.jp/bosai/forecast/img/100.svg"}
-					maxTemperature={30}
-					minTemperature={1}
-					unit={"C"}
-				/>
-			</div>
-			<div>
-				<WeatherCard
-					title={"Tomorrow"}
-					iconUrl={"https://www.jma.go.jp/bosai/forecast/img/100.svg"}
-					maxTemperature={30}
-					minTemperature={1}
-					unit={"C"}
-				/>
-			</div>
-			<div>
-				<WeatherCard
-					title={"Tomorrow"}
-					iconUrl={"https://www.jma.go.jp/bosai/forecast/img/100.svg"}
-					maxTemperature={30}
-					minTemperature={1}
-					unit={"C"}
-				/>
-			</div>
-			<div>
-				<WeatherCard
-					title={"Tomorrow"}
-					iconUrl={"https://www.jma.go.jp/bosai/forecast/img/100.svg"}
-					maxTemperature={30}
-					minTemperature={1}
-					unit={"C"}
-				/>
-			</div>
-		</div>
-	);
+export type Weather = {
+  title: string;
+  iconUrl: string;
+  maxTemperature: string | null;
+  minTemperature: string | null;
+};
+
+type Props = {
+  weathers: Weather[];
+};
+
+export const WeeklyWeather: React.FC<Props> = ({ weathers }) => {
+  const cardItem = weathers.map((weather) => (
+    <WeatherCard
+      title={weather.title}
+      iconUrl={weather.iconUrl}
+      maxTemperature={weather.maxTemperature}
+      minTemperature={weather.minTemperature}
+    />
+  ));
+  return <ul>{cardItem}</ul>;
 };
