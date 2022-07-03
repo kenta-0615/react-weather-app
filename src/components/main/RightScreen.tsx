@@ -3,27 +3,27 @@ import { Weather, WeeklyWeather } from "../common/WeeklyWeather";
 import { HighlightList } from "../common/HighlightList";
 
 type TodayWeatherHighlight = {
-  title: string;
-  value: string;
+	title: string;
+	value: string;
 };
 
 type Props = {
-  weeklyWeather: Weather[];
-  todayWeatherHighlight: TodayWeatherHighlight[];
+	weeklyWeather: Weather[];
+	todayWeatherHighlight: TodayWeatherHighlight[];
 };
 
 export const RightScreen: React.FC<Props> = ({
-  weeklyWeather,
-  todayWeatherHighlight,
+	weeklyWeather,
+	todayWeatherHighlight,
 }) => {
-  return (
-    <div>
-      <div className="flex w-full mt-5 ">
-        <WeeklyWeather weathers={weeklyWeather} />
-      </div>
-      <div>
-        <HighlightList highlights={todayWeatherHighlight} />
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div className="ml-52">
+				<WeeklyWeather weathers={weeklyWeather} />
+			</div>
+			<div>
+				<HighlightList highlights={todayWeatherHighlight} />
+			</div>
+		</div>
+	);
 };
