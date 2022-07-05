@@ -100,7 +100,7 @@ export const Main: React.FC = () => {
 
 	return (
 		<div className="flex">
-			<div className="w-1/3 h-hull">
+			<div className="w-1/3 h-screen bg-sky-400">
 				<LeftScreen
 					image={todayWeatherForecast.image.url}
 					telop={todayWeatherForecast.telop}
@@ -110,7 +110,7 @@ export const Main: React.FC = () => {
 					onSearchWeather={(cityId: string) => getWeather(cityId)}
 				/>
 			</div>
-			<div className="w-2/3 h-hull bg-sky-700">
+			<div className="w-2/3 h-screen bg-sky-700">
 				<RightScreen
 					weeklyWeather={weathersAfterTomorrow}
 					todayWeatherHighlight={todayWeatherHighlights}

@@ -14,7 +14,7 @@ export const WeatherCard: React.FC<Props> = ({
 	iconUrl,
 }) => {
 	return (
-		<div className="bg-navy text-white w-52 h-44">
+		<div className="bg-navy text-white text-center h-52 w-80">
 			<div className="text-center mt-2">
 				<p>{title}</p>
 			</div>

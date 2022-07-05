@@ -23,7 +23,7 @@ export const WeeklyWeather: React.FC<Props> = ({ weathers }) => {
 	));
 	return (
 		<div>
-			<ul className="flex space-x-5 mt-20 -ml-14 ">{cardItem}</ul>
+			<ul className="flex space-x-5 m-20 place-content-center">{cardItem}</ul>
 		</div>
 	);
 };

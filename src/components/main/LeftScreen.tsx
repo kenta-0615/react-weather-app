@@ -24,7 +24,7 @@ export const LeftScreen: React.FC<Props> = ({
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="relative h-hull">
+		<div className="relative h-hull bg-sky-400">
 			{isOpen ? (
 				<SideBar
 					onClose={() => setIsOpen(false)}

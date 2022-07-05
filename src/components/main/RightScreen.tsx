@@ -18,7 +18,7 @@ export const RightScreen: React.FC<Props> = ({
 }) => {
 	return (
 		<div>
-			<div className="ml-52">
+			<div>
 				<WeeklyWeather weathers={weeklyWeather} />
 			</div>
 			<div>
