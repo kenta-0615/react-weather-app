@@ -24,7 +24,7 @@ export const LeftScreen: React.FC<Props> = ({
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="relative h-hull bg-sky-400">
+		<div className="relative h-hull bg-[#1E213A]">
 			{isOpen ? (
 				<SideBar
 					onClose={() => setIsOpen(false)}
@@ -32,7 +32,7 @@ export const LeftScreen: React.FC<Props> = ({
 				/>
 			) : (
 				<>
-					<div className="absolute m-10 px-9 py-2 w-52 bg-[#6E707A]">
+					<div className="absolute m-10 px-9 py-2 w-52 bg-[#616475]">
 						<Button
 							title={"Search for places"}
 							onClick={() => setIsOpen(true)}

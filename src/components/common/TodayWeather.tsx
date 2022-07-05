@@ -18,7 +18,7 @@ export const TodayWeather: React.FC<Props> = ({
 	area,
 }) => {
 	return (
-		<div className="h-screen bg-slate-700 text-center">
+		<div className="h-screen bg-[#1E213A] text-center">
 			<div className="relative flex flex-nowrap top-32 justify-center top-38 items-center max-h-40">
 				<img className="h-48 p-4 m-8" src={iconUrl} />
 			</div>
