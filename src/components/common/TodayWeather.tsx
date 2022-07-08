@@ -18,7 +18,7 @@ export const TodayWeather: React.FC<Props> = ({
 	area,
 }) => {
 	return (
-		<div className="h-screen bg-slate-700 text-center">
+		<div>
 			<div className="relative flex flex-nowrap top-32 justify-center top-38 items-center max-h-40">
 				<img className="h-48 p-4 m-8" src={iconUrl} />
 			</div>
@@ -28,15 +28,14 @@ export const TodayWeather: React.FC<Props> = ({
 					<span className="text-5xl text-slate-100">&deg;{unit}</span>
 				</h1>
 			</div>
-			<div className="h-52">
-				<h3 className="font-semibold text-4xl text-slate-50">{telop}</h3>
+			<div className="">
+				<h3 className="font-semibold text-4xl text-slate-50 text-center">
+					{telop}
+				</h3>
 			</div>
-			<div className="flex flex-col items-center text-center text-slate-50 text-lg space-y-5">
+			<div className="items-center text-center text-slate-50 text-lg space-y-5 my-[20%]">
 				<p>{day}</p>
-				<p>
-					<i className="fas fa-map-marker-alt"></i>
-					{area}
-				</p>
+				<p>{area}</p>
 			</div>
 		</div>
 	);
