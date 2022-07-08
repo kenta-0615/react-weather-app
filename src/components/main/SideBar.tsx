@@ -62,19 +62,27 @@ export const SideBar: React.FC<Props> = ({ onClose, onSearchWeather }) => {
 	});
 
 	return (
-		<div>
-			<div className="absolute top-5 right-10 text-[#E7E7EB]">
-				<Button title={"X"} onClick={onClose} />
+		<div className="mx-[10%]">
+			<Button
+				title={"X"}
+				onClick={onClose}
+				className={"top-5 mx-[100%] my-2 text-[#E7E7EB]"}
+			/>
+			<div className="flex my-[20%]">
+				<Input
+					value={searchInput}
+					onChange={inputSearchWord}
+					className={
+						"w-[268px] h-[48px] bg-[#1E213A] border border-slate-300 rounded-md py-4 pl-11 pr-20"
+					}
+				/>
+				<Button
+					title={"Search"}
+					onClick={searchInputWeather}
+					className={"bg-[#3C47E9] w-20 h-[50px] mx-[1%]"}
+				/>
 			</div>
-			<div className="pt-20 pl-[70px] border-[#E7E7EB]">
-				<Input value={searchInput} onChange={inputSearchWord} />
-			</div>
-			<div className="absolute w-[86px] h-[48px] bg-[#3C47E9] text-center m-auto py-3 right-[45px] top-[82px]">
-				<Button title={"Search"} onClick={searchInputWeather} />
-			</div>
-			<div className="pl-7 py-10 space-y-5">
-				{shouldEnabledSearch ? searchedAreaList : allAreaList}
-			</div>
+			{shouldEnabledSearch ? searchedAreaList : allAreaList}
 		</div>
 	);
 };

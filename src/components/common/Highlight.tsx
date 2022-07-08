@@ -7,10 +7,10 @@ type Props = {
 
 export const Highlight: React.FC<Props> = ({ title, value }) => {
 	return (
-		<div className="bg-navy text-white text-center text-3xl space-y-4 pt-5 h-52 w-80">
-			<div className="font-medium">{title}</div>
+		<div className="bg-navy text-white text-center space-y-4 pt-5 h-52 w-80">
+			<div className="text-[190%]">{title}</div>
 			<div>
-				<span className="text-3xl m-auto pt-10">{value}</span>
+				<span className="text-[150%] m-auto pt-10">{value}</span>
 			</div>
 		</div>
 	);

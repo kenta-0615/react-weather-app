@@ -24,7 +24,7 @@ export const LeftScreen: React.FC<Props> = ({
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="relative h-hull bg-[#1E213A]">
+		<div>
 			{isOpen ? (
 				<SideBar
 					onClose={() => setIsOpen(false)}
@@ -32,12 +32,13 @@ export const LeftScreen: React.FC<Props> = ({
 				/>
 			) : (
 				<>
-					<div className="absolute m-10 px-9 py-2 w-52 bg-[#616475]">
-						<Button
-							title={"Search for places"}
-							onClick={() => setIsOpen(true)}
-						/>
-					</div>
+					<Button
+						title={"Search for places"}
+						onClick={() => setIsOpen(true)}
+						className={
+							"bg-slate-400 h-10 w-[31%] mx-[10%] my-[9%] text-[80%] font-bold "
+						}
+					/>
 					<TodayWeather
 						iconUrl={image}
 						temperature={temperature}

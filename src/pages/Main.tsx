@@ -110,10 +110,7 @@ export const Main: React.FC = () => {
 					onSearchWeather={(cityId: string) => getWeather(cityId)}
 				/>
 			</div>
-			<div className="relative w-2/3 h-screen bg-[#100E1D]">
-				<p className="absolute text-white text-3xl m-auto ml-40 my-80">
-					Today's Highlights
-				</p>
+			<div className="w-2/3 h-screen bg-[#100E1D]">
 				<RightScreen
 					weeklyWeather={weathersAfterTomorrow}
 					todayWeatherHighlight={todayWeatherHighlights}
