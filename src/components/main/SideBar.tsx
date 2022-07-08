@@ -73,7 +73,7 @@ export const SideBar: React.FC<Props> = ({ onClose, onSearchWeather }) => {
 					value={searchInput}
 					onChange={inputSearchWord}
 					className={
-						"w-[268px] h-[48px] bg-[#1E213A] border border-slate-300 rounded-md py-4 pl-11 pr-20"
+						"w-[268px] h-[48px] bg-[#1E213A] border border-slate-300 rounded-md py-4 pl-11 pr-20 text-white"
 					}
 				/>
 				<Button
